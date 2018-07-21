@@ -1,0 +1,24 @@
+<?php
+include './vendor/autoload.php';
+if(isset($_POST['mobile'])&& isset($_POST['msg'])){
+  $sid='AC31cffe4be9207d92af0d03ee2ad00326';
+  $token='71480fca55bd7473a55085a1684d73da';
+  $client=new Twilio\Rest\Client($sid,$token);
+  $messgae=$client->messgae->create(
+    $_POST['mobile'],array(
+      'from'=>'+89524572',
+      'body'=>$_POST['msg']
+    )
+  );
+  if($message->sid){
+    echo "Message sent";
+  }
+}
+?>
+<h2> Sending sms using twilio api</h2>
+<form action ="" method="post">
+Enter mobile:<br>
+<input type="text" placeholder="Mobile number" name="mobile"><br>
+Message <br><textarea placeholder="Message" name="msg"></textarea><br></textarea><br>
+<input type="submit"  value="send">
+</form>
