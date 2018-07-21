@@ -1,6 +1,5 @@
-
-
 <!DOCTYPE html>
+
 <html>
 
   <head>
@@ -32,13 +31,13 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="css/themes/all-themes.css" rel="stylesheet" />
-	<script src="js/jquery-2.1.4.js"></script>
-      <script src="js/fusioncharts.js"></script>
-      <script src="js/fusioncharts.charts.js"></script>
-      <script src="js/fusioncharts.theme.fint.js"></script>
-	  <script src="js/pie1.js"></script>
-	  <script src="js/pie2.js"></script>
-	  <script src="js/pie3.js"></script>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/fusioncharts.js"></script>
+    <script src="js/fusioncharts.charts.js"></script>
+    <script src="js/fusioncharts.theme.fint.js"></script>
+    <script src="js/pie1.js"></script>
+    <script src="js/pie2.js"></script>
+    <script src="js/pie3.js"></script>
   </head>
 
   <body class="theme-red">
@@ -62,7 +61,7 @@
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
-      <!-- Top Bar -->
+    <!-- Top Bar -->
     <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -108,12 +107,12 @@
               </a>
             </li>
             <li>
-                <a href="volunteer.html">
+              <a href="volunteer.html">
                   <span>Volunteers</span>
                 </a>
             </li>
             <li class="active">
-                <a href="patient.html">
+              <a href="patient.html">
                   <span>Patients</span>
                 </a>
             </li>
@@ -139,9 +138,6 @@
         <div class="block-header">
           <h2>DASHBOARD</h2>
         </div>
-
-
-
         <div id="chart-container1" class="row clearfix">
 
         </div>
@@ -151,12 +147,40 @@
 
         </div>
 
-		<div id="chart-container3" class="row clearfix">
-</div>
-        <div class="row clearfix">
-
+        <div id="chart-container3" class="row clearfix">
         </div>
-        
+
+
+        <div class="row clearfix">
+          <div id="map" style="width: 800px; height: 800px"></div>
+
+          <script
+             src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+          </script>
+
+          <script
+             src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js">
+          </script>
+        <script src="2013-earthquake.js"></script>
+          <script>
+
+              var map = L.map('map').setView([19.7515,75.7139], 5);
+              mapLink =
+                  '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+              L.tileLayer(
+                  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '&copy; ' + mapLink + ' Contributors',
+                  maxZoom: 18,
+              }).addTo(map);
+
+              var heat = L.heatLayer(quakePoints,{
+                  radius: 30,
+                  blur: 20,
+                  maxZoom: 10,
+              }).addTo(map);
+
+          </script>
+        </div>
       </div>
     </section>
 

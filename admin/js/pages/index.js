@@ -9,15 +9,15 @@
         }
     });
 
-    initRealTimeChart();
-    initDonutChart();
-    initSparkline();
+    //initRealTimeChart();
+    //initDonutChart();
+    //initSparkline();
 });
 
 var realtime = 'on';
 function initRealTimeChart() {
     //Real time ==========================================================================================
-    var plot = $.plot('#real_time_chart', [getRandomData()], {
+    var plot = $.plot($('#map'), getRandomData(), {
         series: {
             shadowSize: 0,
             color: 'rgb(0, 188, 212)'
