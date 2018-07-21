@@ -28,8 +28,7 @@ else
       {
         session_start();
         $_SESSION['name']=$name;
-
-        echo('Successfully added to database');
+        echo('<h2>Successfully added to database</h2>');
         
       }
       else
@@ -55,9 +54,18 @@ else
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required><br>
 
-        <label for="inputPassword" class="sr-only">Confirm Password</label>
+        <label for="confirmPassword" class="sr-only">Confirm Password</label>
         <input type="password"  name="cpassword" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required><br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+        <label for="registerAs" class="sr-only">Register As</label>
+          <select class="form-control" name="registeras" id="registerAs" class="form-control" placeholder="Register As" required>
+            <option hidden>None<option>
+            <option>Volunteer</option>
+            <option>Donor</option>
+          </select>
+        <br>  
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
       </form>
       <center><a href="login.php"><p>Already Registered?Login Here</p></a></center>
     </div>

@@ -13,31 +13,36 @@
 if (isset($_SESSION['name']))//already loggedin
     {
         $uname = $_SESSION['name'];
-        header('Location: user.php');
     }
 
 if(!empty($_POST['email'])&&!empty($_POST['password']))
 {
     $count=0;
+    $type=" ";
     $email = $_POST['email'];
     $password =$_POST['password'];
-    $sql="SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $sql="SELECT email,password,type FROM users WHERE email='$email' AND password='$password'";
     $q=mysqli_query($conn,$sql);
     $count=mysqli_num_rows($q);
     if($count==1)
     { 
         $row = mysqli_fetch_assoc($q);
-        $name=$row['name'];
-        $id=$row['row'];
-        $_SESSION['id']=$id;
-        $_SESSION['name']=$name;
-        $_SESSION['row']=$row;
-         header('Location: user.php');
-       
+        $email=$row['email'];
+        $type=$row['type'];
     }
-    
     else
-    {echo ("<h2>Incorrect email or Password </h2>");}
+    {
+    echo ("<h2>Incorrect email or Password </h2>");
+    }
+    if($type=="volunteer"){
+      header('Location: volunteer.php');
+    }
+    elseif($type=="donor"){
+      header('Location: donor.php');
+    }
+    elseif($type=="admin"){
+      header('Location: admin/index.html');
+    }
 }
 
 ?>
