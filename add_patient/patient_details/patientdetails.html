@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title></title>
+<link rel="stylesheet" type="text/css" href="2.css">
+ </head>
+ <body>
+ <form>
+<fieldset>
+<legend align="center">Registration Form</legend>
+<table align="center">
+<tr><td>Name</td><td><input type="text" name="name" required="required"/></td></tr>
+<tr><td>Profile pic</td><td><input type="file" name="pic" accept="image/*"></td></tr>
+<tr><td>Bio</td><td><input type="text" name="bio" required="required"/></td></tr>
+<tr><td>Cancer Type</td><td><input type="text" name="cancer" required="required" /></td></tr>
+<tr><td>Gender</td><td>Male<input type=radio name="gender" value="m"></td></tr>
+<tr><td></td><td>Female<input type=radio name="gender" value="f"></td></tr>
+<tr><td>Address</td><td><textarea name="add" rows="10" cols="20"></textarea></td></tr>
+<tr><td>Mobile</td><td><input type="integer" name="mobile" required="required" maxlength="10" />
+<tr><td>City</td><td><select name="City">
+<datalist id="City">
+<option value="Mumbai">Mumbai
+<option value="Delhi">Delhi
+<option value="Chennai">Chennai</select></td></tr>
+</datalist>
+<tr></tr>
+<tr></tr>
+<tr><td></td><td><input type=submit id="submit" class="button" value=Submit name=submit></td>
+</table>
+</fieldset>
+ </form>
+</body>
+</html>
