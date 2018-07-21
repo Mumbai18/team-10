@@ -1,11 +1,11 @@
 $(document).ready(function(){
       $.ajax({
-        url: 'http://localhost/team-10/admin/pie_data.php',
+        url: 'http://localhost/team-10/admin/pie_data/pie_data3.php',
         type: 'GET',
         success : function(data) {
             var chartData=data;    
 				var chartProperties = {
-             "caption": "Split of patients by types",
+             "caption": "Split of patients by Area",
             "subCaption": "This year",
             "numberPrefix": "",
             "showPercentInTooltip": "0",
@@ -16,7 +16,7 @@ $(document).ready(function(){
           };
           apiChart = new FusionCharts({
             type: 'pie2d',
-            renderAt: 'chart-container',
+            renderAt: 'chart-container3',
             width: '550',
             height: '350',
             dataFormat: 'json',

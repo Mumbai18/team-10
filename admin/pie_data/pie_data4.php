@@ -16,14 +16,18 @@
           die("Connection failed: " . $conn->connect_error);
         }
         //the SQL query to be executed
-        $query = "SELECT DISTINCT type FROM `patient`";
+		$variable="location";
+        $query = "SELECT DISTINCT ".$variable." FROM `donors`";
         //storing the result of the executed query
 		//initialize the array to store the processed data
 		$jsonArray = array();
         $result = $conn->query($query);
 		if ($result->num_rows>0){
 			while ($row = $result->fetch_assoc()){
-			$query1="SELECT count(*) FROM `patient` where type='".$row['type']."'";
+			$query1="SELECT count(*) FROM `donors` where ".$variable."='".$row[$variable]."'";
+			//echo $query1;
+			//echo "\n".$variable;
+					
 			$result1=$conn->query($query1) or die($conn->error);
 			$row1=$result1->fetch_assoc();
 			$jsonArrayItem = array();
