@@ -37,8 +37,154 @@
       <script src="js/fusioncharts.charts.js"></script>
       <script src="js/fusioncharts.theme.fint.js"></script>
 	  <script src="js/pie4.js"></script>
-	  <script src="js/pie1.js"></script>
-	  <script src="js/pie1.js"></script>
+	  <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
+<script type="text/javascript">
+    FusionCharts.ready(function(){
+    var fusioncharts = new FusionCharts({
+    type: 'msline',
+    renderAt: 'chart-container-compare',
+    width: '500',
+    height: '300',
+    dataFormat: 'json',
+    dataSource: {
+        "chart": {
+            "caption": "Amount invested by Programs",
+            "subCaption": "Program1 vs Program2",
+            "captionFontSize": "14",
+            "subcaptionFontSize": "14",
+            "subcaptionFontBold": "0",
+            "paletteColors": "#0075c2,#1aaf5d",
+            "bgcolor": "#ffffff",
+            "showBorder": "0",
+            "showShadow": "0",
+            "showCanvasBorder": "0",
+            "usePlotGradientColor": "0",
+            "legendBorderAlpha": "0",
+            "legendShadow": "0",
+            "showAxisLines": "0",
+            "showAlternateHGridColor": "0",
+            "divlineThickness": "1",
+            "divLineIsDashed": "1",
+            "divLineDashLen": "1",
+            "divLineGapLen": "1",
+            "xAxisName": "Day",
+            "showValues": "0"
+        },
+        "categories": [{
+            "category": [{
+                "label": "Jan"
+            }, {
+                "label": "Feb"
+            }, {
+                "label": "Mar"
+            }, {
+                "label": "Mar"
+            }, {
+                "label": "Apr"
+            }, {
+                "label": "May"
+            }, {
+                "label": "Jun"
+            },
+			{
+                "label": "Jul"
+            },
+			{
+                "label": "Aug"
+            },
+			{
+                "label": "Sep"
+            },
+			{
+                "label": "Oct"
+            },
+			{
+                "label": "Nov"
+            },
+			{
+                "label": "Dec"
+            }]
+        }],
+        "dataset": [{
+            "seriesname": "Program1",
+            "data": [{
+                "value": "15123"
+            }, {
+                "value": "14233"
+            }, {
+                "value": "25507"
+            }, {
+                "value": "9110"
+            }, {
+                "value": "15529"
+            }, {
+                "value": "20803"
+            }, {
+                "value": "19202"
+            },
+			{
+                "value": "18202"
+            },
+			{
+                "value": "17302"
+            },
+			{
+                "value": "18602"
+            },
+			{
+                "value": "16202"
+            },
+			{
+                "value": "14204"
+            }]
+        }, {
+            "seriesname": "Program2",
+            "data": [{
+                "value": "25123"
+            }, {
+                "value": "24233"
+            }, {
+                "value": "17507"
+            }, {
+                "value": "19110"
+            }, {
+                "value": "35529"
+            }, {
+                "value": "10803"
+            }, {
+                "value": "16402"
+            },
+			{
+                "value": "18902"
+            },
+			{
+                "value": "21302"
+            },
+			{
+                "value": "16602"
+            },
+			{
+                "value": "11202"
+            },
+			{
+                "value": "19204"
+            }]
+        }],
+        "trendlines": [{
+            "line": [{
+                "startvalue": "17022",
+                "color": "#6baa01",
+                "valueOnRight": "1",
+                "displayvalue": "Average"
+            }]
+        }]
+    }
+}
+);
+    fusioncharts.render();
+    });
+</script>
   </head>
 
   <body class="theme-red">
@@ -142,11 +288,15 @@
         </div>
 
 
-
+		<div id="chart-container-compare" class="row clearfix">
+	
+        </div>
 
         <div id="chart-container4" class="row clearfix">
 	
         </div>
+		
+		
 
           
         </div>
