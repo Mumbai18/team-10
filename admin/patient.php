@@ -126,7 +126,7 @@
         <!-- Footer -->
         <div class="legal">
           <div class="copyright">
-            &copy; 2016 - 2017 <a href="javascript:void(0);">Admin</a>.
+            &copy; 2017 - 2018 <a href="javascript:void(0);">Admin</a>.
           </div>
           <div class="version">
             <b>Version: </b> 1.0.5
@@ -141,7 +141,7 @@
       <div class="container-fluid">
         <div class="block-header">
 
-          <div id="editor"></div>
+          
           <button id="cmd">Generate PDF</button>
 
           <h2>DASHBOARD</h2>

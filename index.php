@@ -73,6 +73,10 @@
         <div class="row">
 
             <div class="col-lg-12 text-center">
+             <!--  <iframe height="600" width="500" src="https://bot.dialogflow.com/dff82775-13ad-4cbb-bffd-1ed4da77afdc"></iframe> -->
+
+             <iframe width="400" height="500" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/dff82775-13ad-4cbb-bffd-1ed4da77afdc"></iframe><br><br>
+             
                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="admin/index.php">Admin Login</a><br><br>
             <h2 class="section-heading text-uppercase">Our Suporters</h2>
             <h3 class="section-subheading text-muted"></h3>

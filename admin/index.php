@@ -266,6 +266,11 @@
                   <span>Patients</span>
                 </a>
             </li>
+            <li>
+              <a href="PHPMailer_5.2.0/login.php">
+                  <span>Send Email</span>
+                </a>
+            </li>
           </ul>
         </div>
         <!-- #Menu -->
