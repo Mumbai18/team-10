@@ -6,7 +6,7 @@
         <div class="intro-text">
           <div class="intro-lead-in">Together we can amd together we will </div>
           <div class="intro-heading text-uppercase">CONQUER CANCER</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Know more about us!</a>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="mainportal/login.php">Goto Main Portal</a>
         </div>
       </div>
     </header>
