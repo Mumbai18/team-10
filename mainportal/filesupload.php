@@ -27,7 +27,7 @@ if(isset($_POST['btn-upload']))
   $gbranch=$_POST['gbranch'];
   $year=$_POST['year'];
   
-//echo '<h1>'.$bio.$ccoll.$mobile.'</h1>';
+//echo '<h1>'.$bio.$ccoll.$mo   bile.'</h1>';
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
 
@@ -156,7 +156,7 @@ $(document).ready(function() {
     max-width: 100%;
 }
 </style>
-  <form class="form-signin" method="post" action="editprofile1.php" >
+  <form class="form-signin" method="post" action="filesupload.php" >
     <!-- enctype="multipart/form-data" -->
         <h2 class="form-signin-heading"> Profile</h2>
       
@@ -205,7 +205,7 @@ $(document).ready(function() {
       <div id="footer"><center>
       <h3 id="ftext">
       By <a href="about.php">Cancer Connect</a></h3>
-      <h4 id="ftext"><b>All Rights reserved &copy; 2017 </b></h4></center>
+      <h4 id="ftext"><b>All Rights reserved &copy; 2018 </b></h4></center>
       </div>
 
 	
