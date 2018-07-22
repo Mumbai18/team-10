@@ -6,7 +6,7 @@ require("dbconnect.php");
 
 /*if (isset($_SESSION['name']))
 {*/
-      $name = $_SESSION['name'];
+  $name = $_SESSION['name'];
 
 if(isset($_POST['btn-upload']))
 {    
