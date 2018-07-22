@@ -120,6 +120,7 @@
             </li>
           </ul>
         </div>
+
         <!-- #Menu -->
         <!-- Footer -->
         <div class="legal">
@@ -138,11 +139,27 @@
     <section class="content">
       <div class="container-fluid">
         <div class="block-header">
+
+          <div id="editor"></div>
+          <button id="cmd">Generate PDF</button>
+
           <h2>DASHBOARD</h2>
         </div>
 
 
-        <div class="row clearfix">
+
+
+<!-- <div id="content">
+    <h3>Sample h3 tag</h3>
+    <p>Sample pararaph</p>
+</div>
+<div id="editor"></div>
+<button id="cmd">Generate PDF</button> -->
+
+
+
+
+        <div class="row clearfix" id="content">
           <!-- Task Info -->
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <div class="card">
@@ -156,6 +173,39 @@
                 </div>
                 <!-- #END# Task Info -->
         </div>
+        <script>
+          $(document).ready(function(){
+      $.ajax({
+        url: 'http://localhost/team-10/admin/pie_data/pie_data1.php',
+        type: 'GET',
+        success : function(data) {
+            var chartData=data;    
+        var chartProperties = {
+             "caption": "Split of patients by types",
+            "subCaption": "This year",
+            "numberPrefix": "",
+            "showPercentInTooltip": "0",
+            "decimals": "1",
+            "useDataPlotColorForLabels": "1",
+            //Theme
+            "theme": "fint"
+          };
+          apiChart = new FusionCharts({
+            type: 'pie2d',
+            renderAt: 'chart-container1',
+            width: '550',
+            height: '350',
+            dataFormat: 'json',
+            dataSource: {
+              "chart": chartProperties,
+              "data": chartData
+            }
+          });
+          apiChart.render();
+        }
+      });
+    });
+        </script>
 
         <div class="row clearfix">
           <!-- Task Info -->
@@ -215,6 +265,12 @@
         </div>
     </section>
 
+
+    
+
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+
     <!-- Jquery Core Js -->
     <script src="plugins/jquery/jquery.min.js"></script>
 
@@ -256,6 +312,26 @@
 
     <!-- Demo Js -->
     <script src="js/demo.js"></script>
+
+    <script>
+      var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#cmd').click(function () {   
+    doc.fromHTML($('#content').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('report.pdf');
+});
+
+// This code is collected but useful, click below to jsfiddle link.
+
+    </script>
   </body>
 
 </html>
