@@ -1,7 +1,7 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
-
 <html>
-
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -235,14 +235,13 @@
             <img src="images/user.png" width="48" height="48" alt="User" />
           </div>
           <div class="info-container">
-            <?php session_start() ?>
-            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php $_SESSION['name'];?></div>
-            <div class="email"><?php $_SESSION['email'];?></div>
+            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></div>
+            <div class="email"><?php echo $_SESSION['email']; ?></div>
             <div class="btn-group user-helper-dropdown">
               <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
               <ul class="dropdown-menu pull-right">
                 <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                <li><a href="../signout.php"><i class="material-icons">input</i>Sign Out</a></li>
               </ul>
             </div>
           </div>
@@ -253,17 +252,17 @@
           <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active">
-              <a href="index.html">
+              <a href="index.php">
                 <span>Donor</span>
               </a>
             </li>
             <li>
-              <a href="volunteer.html">
+              <a href="volunteer.php">
                   <span>Volunteers</span>
                 </a>
             </li>
             <li>
-              <a href="patient.html">
+              <a href="patient.php">
                   <span>Patients</span>
                 </a>
             </li>

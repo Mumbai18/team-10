@@ -8,7 +8,9 @@
 </head>
 <?php require("includes/_dbconnect.php");?>
 
-<?php session_start();
+<?php 
+
+session_start();
 
 if (isset($_SESSION['name']))//already loggedin
     {
@@ -29,7 +31,7 @@ if(!empty($_POST['email'])&&!empty($_POST['password']))
         $row = mysqli_fetch_assoc($q);
         $email=$row['email'];
         $type=$row['type'];
-        session_start();
+
         $_SESSION['name']=$row['name'];
         $_SESSION['email']=$row['email'];
     }
