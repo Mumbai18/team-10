@@ -1,37 +1,60 @@
-<!DOCTYPE html>
-<?php
-include 'includes/_header.html'
-?>
-<html>
-	<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<?php require("includes/_header.html");?>
 
-    <title>Feedback</title>
-    <link rel="stylesheet" type="text/css" href="3.css">
-	</head>
-	<body>   
+<?php require("includes/_dbconnect.php");
+
+
+if(!empty($_POST['name'])&&!empty($_POST['email'])&&!empty($_POST['password']))
+{ 
+
+if($_POST['password']!=$_POST['cpassword'])
+  {
+      echo'Password and Confirm password do not match';
+  }
+else
+  {
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+ 
+    $sql = "INSERT INTO users (name,password,email) VALUES ('$name', '$password', '$email')";
+    $q = mysqli_query($conn,$sql);
+    if($q)
+      {
+        session_start();
+        $_SESSION['name']=$name;
+        echo('<h2>Successfully added to database</h2>');
+        
+      }
+      else
+        {die('<h1>Couldnt save<h1>');}
+  }//inner else
+}
+?>
+
+    <div class="container">
       
-		  <div class="container">
-  <h2>Feedback Form</h2>
-  <form action="/action_page.php">
-    <div class="form-group">
-  <label for="pid">PatientId:</label>
-  <textarea class="form-control" rows="1" id="pid"></textarea>
-</div>
-    <div class="form-group">
-  <label for="vid">VolunteerId:</label>
-  <textarea class="form-control" rows="1" id="vid"></textarea>
-</div>
-    <div class="form-group">
-  <label for="feedback">Feedback:</label>
-  <textarea class="form-control" rows="5" id="feedback"></textarea>
-</div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
-		  
-		  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-	</body>
-</html>
+    <div class="jumbotron">
+      </div>
+
+      <form class="form-signin" method="post" action="feedback.php">
+        <h2 class="form-signin-heading"> Feedback form for Volunteers</h2>
+
+        <label for="name" class="sr-only">Patient Name</label>
+        <input type="text" name="name" id="inputName" class="form-control" placeholder="Patient Name" required autofocus><br>
+
+        <label for="name" class="sr-only">Volunteer Name</label>
+        <input type="text" name="name" id="inputName" class="form-control" placeholder="Volunteer Name" required autofocus><br>
+
+        <div class="form-group">
+        <label for="feedback">Write your Feedback:</label>
+          <textarea class="form-control" rows="5" id="feedback"></textarea>
+        </div>
+
+        <br>  
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      </form>
+    </div>
+  </div>    
+    
+<?php require("includes/_footer.html");?>

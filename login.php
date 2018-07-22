@@ -1,6 +1,10 @@
 <?php require("includes/_header.html");?>
 <head>
   <style type="text/css">
+     .navbar{
+      transition:500ms ease;
+    }
+
      #mainNav{
       background-color:#212529;
      }

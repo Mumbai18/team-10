@@ -1,12 +1,30 @@
 <?php include_once('includes/_header.html'); ?>
+<head>
+  <style type="text/css">
+     nav li a{
+      color:##fec810!important;
+     }
+
+     .navbar.scrolled{
+       color:white ;
+      }
+  </style>
+
+  <script type="text/javascript">
+    $(window).scroll(function(){
+        $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+    });
+  </script>
+
+</head>
 
     <!-- Header -->
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-lead-in">Together we can amd together we will </div>
+          <div class="intro-lead-in">Together we can and together we will </div>
           <div class="intro-heading text-uppercase">CONQUER CANCER</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="mainportal/login.php">Goto Main Portal</a>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="mainportal/login.php">Go to Main Portal</a>
         </div>
       </div>
     </header>
