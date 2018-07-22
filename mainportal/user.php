@@ -130,6 +130,7 @@ echo '<h4>Welcome '.$name.'</h4>';
         <h2><?php echo $bio;?></h2>
         <h4><?php echo "Id:".$id;?></h4>
         <a href="editprofile.php">Edit Profile</a><br>
+        <a href="filesupload.php">Files Upload</a><br>
         <a href="registermap.php">Edit Location</a><br>
         </center>
         </div>
