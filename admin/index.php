@@ -235,8 +235,9 @@
             <img src="images/user.png" width="48" height="48" alt="User" />
           </div>
           <div class="info-container">
-            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-            <div class="email">john.doe@example.com</div>
+            <?php session_start() ?>
+            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php $_SESSION['name'];?></div>
+            <div class="email"><?php $_SESSION['email'];?></div>
             <div class="btn-group user-helper-dropdown">
               <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
               <ul class="dropdown-menu pull-right">

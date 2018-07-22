@@ -21,7 +21,7 @@ if(!empty($_POST['email'])&&!empty($_POST['password']))
     $type=" ";
     $email = $_POST['email'];
     $password =$_POST['password'];
-    $sql="SELECT email,password,type FROM users WHERE email='$email' AND password='$password'";
+    $sql="SELECT name,email,password,type FROM users WHERE email='$email' AND password='$password'";
     $q=mysqli_query($conn,$sql);
     $count=mysqli_num_rows($q);
     if($count==1)
@@ -29,6 +29,9 @@ if(!empty($_POST['email'])&&!empty($_POST['password']))
         $row = mysqli_fetch_assoc($q);
         $email=$row['email'];
         $type=$row['type'];
+        session_start();
+        $_SESSION['name']=$row['name'];
+        $_SESSION['email']=$row['email'];
     }
     else
     {
@@ -41,7 +44,7 @@ if(!empty($_POST['email'])&&!empty($_POST['password']))
       header('Location: donor.php');
     }
     elseif($type=="admin"){
-      header('Location: admin/index.html');
+      header('Location: admin/index.php');
     }
 }
 

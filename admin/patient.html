@@ -28,6 +28,8 @@
 
     <!-- Custom Css -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"/>
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="css/themes/all-themes.css" rel="stylesheet" />
@@ -176,7 +178,34 @@
 
                                 <div class="body">
                                     <div id="chart-container3" class="table-responsive">
+                                          <div id="map" style="width: 100%; height: 400px"></div>
 
+                                          <script
+                                             src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+                                          </script>
+
+                                          <script
+                                             src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js">
+                                          </script>
+                                        <script src="2013-earthquake.js"></script>
+                                          <script>
+
+                                              var map = L.map('map').setView([19.7515,75.7139], 5);
+                                              mapLink =
+                                                  '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+                                              L.tileLayer(
+                                                  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                                  attribution: '&copy; ' + mapLink + ' Contributors',
+                                                  maxZoom: 18,
+                                              }).addTo(map);
+
+                                              var heat = L.heatLayer(quakePoints,{
+                                                  radius: 30,
+                                                  blur: 20,
+                                                  maxZoom: 10,
+                                              }).addTo(map);
+
+                                          </script>
                                     </div>
                                 </div>
                             </div>
