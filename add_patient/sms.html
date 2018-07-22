@@ -4,7 +4,7 @@ if(isset($_POST['mobile'])&& isset($_POST['msg'])){
   $sid='AC31cffe4be9207d92af0d03ee2ad00326';
   $token='71480fca55bd7473a55085a1684d73da';
   $client=new Twilio\Rest\Client($sid,$token);
-  $messgae=$client->messgae->create(
+  $message=$client->message->create(
     $_POST['mobile'],array(
       'from'=>'+89524572',
       'body'=>$_POST['msg']
